@@ -398,6 +398,7 @@ PRODUCT_PACKAGES += \
     TimeKeep
 
 # Update
+AB_OTA_UPDATER := false
 PRODUCT_SOONG_NAMESPACES += bootable/deprecated-ota
 
 # USB
