@@ -57,27 +57,10 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml
 
-# Bluetooth
-PRODUCT_PACKAGES += \
-    android.hardware.bluetooth@1.1.vendor \
-    vendor.qti.hardware.bluetooth_audio@2.1.vendor \
-    vendor.qti.hardware.btconfigstore@1.0.vendor \
-    vendor.qti.hardware.btconfigstore@2.0.vendor
-
 # Camera
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
-    android.hardware.camera.provider@2.4-service_64 \
-    vendor.qti.hardware.camera.device@1.0.vendor
-
-PRODUCT_PACKAGES += \
-    libcamera_provider_shim \
-    libMegviiFacepp-0.5.2 \
-    libmegface \
-    libpiex_shim
-
-PRODUCT_PACKAGES += \
-    libpng.vendor
+    android.hardware.camera.provider@2.4-service_64
 
 # DebugFS
 PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
@@ -99,19 +82,11 @@ PRODUCT_PACKAGES += \
     disable_configstore \
     gralloc.atoll \
     hwcomposer.atoll \
-    libdisplayconfig.system.qti \
-    libqdMetaData.system \
-    vendor.qti.hardware.display.allocator-service \
-    vendor.qti.hardware.display.mapper@1.1.vendor \
-    vendor.qti.hardware.display.mapper@2.0.vendor
+    vendor.qti.hardware.display.allocator-service
 
 # DRM
 PRODUCT_PACKAGES += \
-    libcrypto-v33 \
     android.hardware.drm-service.clearkey
-
-PRODUCT_PACKAGES += \
-    android.hardware.drm@1.4.vendor
 
 # Fastbootd
 PRODUCT_PACKAGES += \
@@ -119,22 +94,13 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1.vendor \
     android.hardware.biometrics.fingerprint-service.xiaomi
-
-PRODUCT_PACKAGES += \
-    com.fingerprints.extension@1.0.vendor \
-    libvendor.goodix.hardware.biometrics.fingerprint@2.1.vendor
 
 # FM
 PRODUCT_PACKAGES += \
     FM2 \
     libqcomfm_jni \
     qcom.fmradio
-
-# Gatekeeper
-PRODUCT_PACKAGES += \
-    android.hardware.gatekeeper@1.0.vendor
 
 # GPS
 PRODUCT_PACKAGES += \
@@ -156,10 +122,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.health-service.qti \
     android.hardware.health-service.qti_recovery
-
-# HIDL
-PRODUCT_PACKAGES += \
-    libhwbinder.vendor
 
 # HotwordEnrollement app permissions
 PRODUCT_COPY_FILES += \
@@ -184,18 +146,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.ir-service.example
 
-# Keymaster
-PRODUCT_PACKAGES += \
-    android.hardware.keymaster@4.1.vendor
-
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.light-service.xiaomi
-
-# Media
-PRODUCT_PACKAGES += \
-    libavservices_minijail \
-    libavservices_minijail.vendor
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/media/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml \
@@ -210,14 +163,6 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_c2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_c2.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_c2_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_c2_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_c2_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_c2_video.xml
-
-# Net
-PRODUCT_PACKAGES += \
-    android.system.net.netd@1.1.vendor \
-
-# Neural networks
-PRODUCT_PACKAGES += \
-    android.hardware.neuralnetworks@1.3.vendor
 
 # NFC
 PRODUCT_PACKAGES += \
@@ -323,31 +268,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
-# Protobuf
-PRODUCT_PACKAGES += \
-    libprotobuf-cpp-full-3.9.1-vendorcompat \
-    libprotobuf-cpp-lite-3.9.1-vendorcompat
-
-# QMI
-PRODUCT_PACKAGES += \
-    libjson \
-    libqti_vndfwk_detect.vendor \
-    libvndfwk_detect_jni.qti.vendor
-
-# RIL
-PRODUCT_PACKAGES += \
-    librmnetctl \
-    libxml2
-
-PRODUCT_PACKAGES += \
-    libsqlite.vendor
-
-PRODUCT_PACKAGES += \
-    android.hardware.radio@1.6.vendor \
-    android.hardware.radio.config@1.3.vendor \
-    android.hardware.radio.deprecated@1.0.vendor \
-    android.hardware.secure_element@1.2.vendor
-
 # Rootdir
 PRODUCT_PACKAGES += \
     init.qcom.early_boot.sh \
@@ -370,9 +290,6 @@ PRODUCT_COPY_FILES += \
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors-service.xiaomi-multihal
-
-PRODUCT_PACKAGES += \
-    libsensorndkbridge
 
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 29
@@ -440,8 +357,6 @@ PRODUCT_PACKAGES += \
     libwpa_client \
     libwifi-hal-ctrl \
     libwifi-hal-qcom \
-    vendor.qti.hardware.wifi.hostapd@1.2.vendor \
-    vendor.qti.hardware.wifi.supplicant@2.2.vendor \
     wpa_supplicant \
     wpa_supplicant.conf
 
@@ -451,14 +366,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
 
 # WiFi Display
-PRODUCT_PACKAGES += \
-    libnl \
-    libwfdaac_vendor
-
-PRODUCT_PACKAGES += \
-    android.media.audio.common.types-V2-cpp \
-    vendor.qti.hardware.display.config-V5-ndk
-
 PRODUCT_BOOT_JARS += \
     WfdCommon
 
