@@ -99,6 +99,7 @@ function blob_fixup() {
             [ "$2" = "" ] && return 0
             "${PATCHELF}" --remove-needed "android.hidl.base@1.0.so" "${2}"
             grep -q "libinput_shim.so" "${2}" || "${PATCHELF}" --add-needed "libinput_shim.so" "${2}"
+            grep -q "libbinder_shim.so" "${2}" || "${PATCHELF}" --add-needed "libbinder_shim.so" "${2}"
             ;;
         system_ext/lib64/libwfdservice.so)
             [ "$2" = "" ] && return 0
